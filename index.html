@@ -354,7 +354,7 @@
             </p>
           </div>
           <form class="form-card" data-form="quote" novalidate>
-            <p class="form-status"></p>
+            <p class="form-status" aria-live="polite"></p>
             <div class="form-grid">
               <div>
                 <label for="quote-name">Name</label>
@@ -425,7 +425,7 @@
             </p>
           </div>
           <form class="form-card" data-form="contact" novalidate>
-            <p class="form-status"></p>
+            <p class="form-status" aria-live="polite"></p>
             <div class="form-grid">
               <div>
                 <label for="contact-name">Name</label>
@@ -536,22 +536,11 @@
         <span data-bind="BUSINESS_NAME">Remodeling Supplier</span>
         · <span data-year></span>
         · remodelingsupplier.us
-        · Company name is a placeholder and can be swapped in config.
+        · Public name is a placeholder and can be updated later.
       </div>
     </footer>
 
     <script src="/js/config.js"></script>
     <script src="/js/site.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var ig = window.SITE_CONFIG && window.SITE_CONFIG.INSTAGRAM_URL;
-        var fb = window.SITE_CONFIG && window.SITE_CONFIG.FACEBOOK_URL;
-        var note = document.querySelector("[data-placeholder-social]");
-        if (!note) return;
-        var emptyIg = !ig || /^REPLACE_WITH_/i.test(ig);
-        var emptyFb = !fb || /^REPLACE_WITH_/i.test(fb);
-        if (!emptyIg || !emptyFb) note.hidden = true;
-      });
-    </script>
   </body>
 </html>
