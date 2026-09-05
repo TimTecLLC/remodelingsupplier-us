@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Remodeling Supplier">
+  <rect width="1200" height="630" fill="#1f3b32"/>
+  <circle cx="980" cy="315" r="220" fill="none" stroke="rgba(243,239,228,0.12)" stroke-width="2"/>
+  <circle cx="980" cy="315" r="150" fill="none" stroke="rgba(243,239,228,0.2)" stroke-width="2"/>
+  <circle cx="980" cy="315" r="80" fill="none" stroke="#c4784a" stroke-width="3"/>
+  <circle cx="980" cy="315" r="14" fill="#c4784a"/>
+  <text x="80" y="230" fill="#f6f1e6" font-family="Georgia, serif" font-size="64">Remodeling Supplier</text>
+  <text x="80" y="310" fill="#f3d2c3" font-family="Georgia, serif" font-size="36">Appliance repair &amp; installation</text>
+  <text x="80" y="390" fill="#d7e0db" font-family="Arial, sans-serif" font-size="28">Orlando · Kissimmee · St. Cloud</text>
+  <text x="80" y="440" fill="#d7e0db" font-family="Arial, sans-serif" font-size="24">About 100 miles from downtown Orlando, FL</text>
+</svg>
