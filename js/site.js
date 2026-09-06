@@ -131,6 +131,7 @@
       "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
       "@id": (config.SITE_URL || "https://remodelingsupplier.us") + "/#business",
       name: text(config.BUSINESS_NAME, "Serhii Appliances Services"),
+      image: (config.SITE_URL || "https://remodelingsupplier.us") + "/assets/logo.png",
       url: config.SITE_URL || "https://remodelingsupplier.us",
       telephone: isPlaceholder(config.PHONE) ? undefined : telHref(config.PHONE).replace("tel:", ""),
       description:
