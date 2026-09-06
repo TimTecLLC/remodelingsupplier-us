@@ -6,7 +6,8 @@ Coverage called out on the site and in SEO copy:
 
 - Primary cities: **Orlando, Kissimmee, St. Cloud**
 - Radius: about **100 miles from downtown Orlando, FL**
-- Secondary: other Central Florida towns inside that ring
+- Secondary and ring towns: dedicated pages under `/locations/<city-slug>/`
+- Brands named on the homepage (logos for identification only): Whirlpool, Samsung, LG, GE, Maytag, Frigidaire, Kenmore, Bosch, KitchenAid, Electrolux, and similar models
 
 There is no application server. Open `index.html` locally or drop the folder on any static host.
 
@@ -96,9 +97,10 @@ Turn on HTTPS after DNS is live.
 
 | URL | Purpose |
 | --- | --- |
-| `/` | Landing page: hero, services, area, how it works, both forms, FAQ |
+| `/` | Landing page: hero, services, brands, area, how it works, both forms, FAQ |
 | `/quote/` | Quote form |
 | `/contact/` | Information / contact form |
 | `/privacy/` | Short privacy note |
+| `/locations/<city>/` | Local SEO pages (Orlando, Kissimmee, St. Cloud, and other Central Florida cities) |
 | `/robots.txt` | Allow indexing + sitemap |
 | `/sitemap.xml` | Canonical URLs |

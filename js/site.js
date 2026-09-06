@@ -145,9 +145,26 @@
         addressCountry: "US",
       },
       areaServed: [
-        { "@type": "City", name: "Orlando", containedInPlace: { "@type": "State", name: "Florida" } },
-        { "@type": "City", name: "Kissimmee", containedInPlace: { "@type": "State", name: "Florida" } },
-        { "@type": "City", name: "St. Cloud", containedInPlace: { "@type": "State", name: "Florida" } },
+        "Orlando",
+        "Kissimmee",
+        "St. Cloud",
+        "Winter Park",
+        "Sanford",
+        "Clermont",
+        "Winter Garden",
+        "Oviedo",
+        "Poinciana",
+        "Davenport",
+        "Altamonte Springs",
+        "Apopka",
+        "Ocoee",
+        "Lake Mary",
+        "Celebration",
+        "Haines City",
+        "Lakeland",
+      ].map(function (name) {
+        return { "@type": "City", name: name, containedInPlace: { "@type": "State", name: "Florida" } };
+      }).concat([
         {
           "@type": "GeoCircle",
           name: "About 100 miles from downtown Orlando, FL",
@@ -159,7 +176,7 @@
           },
           geoRadius: 160934,
         },
-      ],
+      ]),
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Appliance repair and installation",
