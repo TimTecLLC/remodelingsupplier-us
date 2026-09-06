@@ -392,6 +392,12 @@ h3 {
   font-size: 0.98rem;
 }
 
+.free-note {
+  margin: 0 0 0.65rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
 .hero-visual {
   position: relative;
   border-radius: calc(var(--radius) + 4px);
