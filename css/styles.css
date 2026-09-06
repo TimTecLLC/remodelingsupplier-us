@@ -607,6 +607,109 @@ h3 {
   margin-top: 0;
 }
 
+.city-group-label {
+  margin: 1.1rem 0 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.city-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.5rem;
+  list-style: none;
+  margin: 0 0 0.35rem;
+  padding: 0;
+}
+
+.city-links a {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.city-links a:hover {
+  border-color: var(--accent);
+  color: var(--copper-deep);
+}
+
+.city-links-compact {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.city-links-compact a {
+  border-radius: 8px;
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.brand-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 5.4rem;
+  padding: 0.85rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.brand-card img {
+  display: block;
+  width: auto;
+  max-width: 9.5rem;
+  max-height: 2.65rem;
+  height: auto;
+  object-fit: contain;
+}
+
+.brands-note {
+  margin: 0;
+  max-width: 46rem;
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+
+.crumbs {
+  margin: 0 0 0.85rem;
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+}
+
+.crumbs a {
+  color: var(--copper);
+}
+
+.location-layout {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.location-aside h2 {
+  font-size: 1.25rem;
+}
+
+.location-aside h3 {
+  margin-top: 1.1rem;
+}
+
 .steps {
   display: grid;
   gap: 0.85rem;
@@ -868,8 +971,13 @@ textarea:user-invalid,
     font-size: 0.95rem;
   }
 
+  .brand-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .hero-grid,
   .area-layout,
+  .location-layout,
   .footer-grid,
   .split {
     grid-template-columns: 1.15fr 0.85fr;
@@ -908,6 +1016,10 @@ textarea:user-invalid,
 }
 
 @media (min-width: 980px) {
+  .brand-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
   .services-grid {
     grid-template-columns: repeat(4, 1fr);
   }

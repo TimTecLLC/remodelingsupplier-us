@@ -1,0 +1,15 @@
+Brand wordmarks in this folder are identification marks only.
+They are not used to claim a factory program, dealer status, or partnership.
+
+Files were downloaded from Wikimedia Commons (public identification SVGs):
+
+whirlpool.svg   https://commons.wikimedia.org/wiki/File:Whirlpool_Corporation_Logo_(as_of_2017).svg
+samsung.svg     https://commons.wikimedia.org/wiki/File:Samsung_wordmark.svg
+lg.svg          https://commons.wikimedia.org/wiki/File:LG_logo_(2014).svg
+ge.svg          https://commons.wikimedia.org/wiki/File:General_Electric_logo.svg
+maytag.svg      https://commons.wikimedia.org/wiki/File:Logo_of_Maytag_(1963-2008).svg
+frigidaire.svg  https://commons.wikimedia.org/wiki/File:Frigidaire.svg
+kenmore.svg     https://commons.wikimedia.org/wiki/File:Kenmore_wordmark.svg
+bosch.svg       https://commons.wikimedia.org/wiki/File:Bosch-logo.svg
+kitchenaid.svg  https://commons.wikimedia.org/wiki/File:Kitchenaid_logo.svg
+electrolux.svg  https://commons.wikimedia.org/wiki/File:Electrolux_2015.svg
