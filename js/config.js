@@ -1,44 +1,34 @@
 /**
- * Remodeling Supplier — public site configuration
- * =================================================
- * Edit this file only when you have real details. Leave placeholders
- * in place until then. Do not invent phone numbers, street addresses,
- * licenses, or social handles.
+ * Serhii Appliances Services — public site configuration
+ * Domain: remodelingsupplier.us
  *
- * After you change values here, the header, footer, forms, and
- * schema.org JSON-LD update automatically (see js/site.js).
+ * Phone, email, and socials below are live. Leave ADDRESS as a
+ * placeholder until a street address exists. Do not invent licenses.
  */
 window.SITE_CONFIG = {
-  BUSINESS_NAME: "Remodeling Supplier",
+  BUSINESS_NAME: "Serhii Appliances Services",
 
-  /* Example: "(407) 555-0100" — used for visible text and tel: links */
-  PHONE: "REPLACE_WITH_PHONE",
+  /* Visible phone. tel: links are normalized to +18133827292 in js/site.js */
+  PHONE: "(813) 382-7292",
 
-  /* Example: "hello@remodelingsupplier.us" — mailto fallback for forms */
-  EMAIL: "REPLACE_WITH_EMAIL",
+  /* Destination for mailto quote and contact forms */
+  EMAIL: "sergeyvirych81@yahoo.com",
 
-  /* Full street address when you have one. Shown in the footer and NAP schema. */
   ADDRESS: "REPLACE_WITH_ADDRESS",
 
-  /* Full profile URLs, or leave empty to hide the links */
-  INSTAGRAM_URL: "",
-  FACEBOOK_URL: "",
+  INSTAGRAM_URL: "https://www.instagram.com/sserge_sserge",
+  FACEBOOK_URL: "https://www.facebook.com/share/19X2FFmokt/?mibextid=wwXIfr",
+  TIKTOK_URL: "https://www.tiktok.com/@guestintime",
 
   /* Extra footer links: [{ label: "Google Business Profile", url: "https://..." }] */
   OTHER_LINKS: [],
 
   /**
-   * Forms
-   * -----
-   * Option A (default): leave these empty. Submit opens the visitor's
-   * email app via mailto:EMAIL (so EMAIL must be set first).
-   *
-   * Option B: create a form at https://formspree.io and paste the
-   * endpoint, e.g. "https://formspree.io/f/xxxxxxxx"
+   * Forms default to mailto:EMAIL. Optional Formspree endpoints:
+   * "https://formspree.io/f/xxxxxxxx"
    */
   FORMSPREE_QUOTE: "",
   FORMSPREE_CONTACT: "",
 
-  /* Canonical site origin — no trailing slash */
   SITE_URL: "https://remodelingsupplier.us",
 };
