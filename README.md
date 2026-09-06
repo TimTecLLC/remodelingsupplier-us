@@ -1,6 +1,6 @@
-# Remodeling Supplier — remodelingsupplier.us
+# Serhii Appliances Services — remodelingsupplier.us
 
-Static marketing site for appliance repair and installation in Central Florida. Public name is **Remodeling Supplier** for now and can be swapped later.
+Static marketing site for appliance repair and installation in Central Florida. Public name is **Serhii Appliances Services**. The domain stays **remodelingsupplier.us**.
 
 Coverage called out on the site and in SEO copy:
 
@@ -14,21 +14,24 @@ There is no application server. Open `index.html` locally or drop the folder on 
 
 All public contact fields live in **`js/config.js`**:
 
-| Field | What to put |
+| Field | Current value |
 | --- | --- |
-| `BUSINESS_NAME` | Public company name (placeholder today) |
-| `PHONE` | Real number, or leave `REPLACE_WITH_PHONE` |
-| `EMAIL` | Inbox for mailto forms, or leave `REPLACE_WITH_EMAIL` |
-| `ADDRESS` | Street address when you have one, or leave `REPLACE_WITH_ADDRESS` |
-| `INSTAGRAM_URL` | Full profile URL, or `""` to hide the link |
-| `FACEBOOK_URL` | Full profile URL, or `""` to hide the link |
-| `OTHER_LINKS` | Optional `{ label, url }` objects (Google Business Profile, etc.) |
-| `FORMSPREE_QUOTE` / `FORMSPREE_CONTACT` | Formspree endpoints, or `""` |
-| `SITE_URL` | Canonical origin, already set to `https://remodelingsupplier.us` |
+| `BUSINESS_NAME` | Serhii Appliances Services |
+| `PHONE` | (813) 382-7292 — `tel:` links use `+18133827292` |
+| `EMAIL` | sergeyvirych81@yahoo.com (quote and contact mailto) |
+| `ADDRESS` | `REPLACE_WITH_ADDRESS` until a street address exists |
+| `INSTAGRAM_URL` | https://www.instagram.com/sserge_sserge |
+| `FACEBOOK_URL` | https://www.facebook.com/share/19X2FFmokt/?mibextid=wwXIfr |
+| `TIKTOK_URL` | https://www.tiktok.com/@guestintime |
+| `OTHER_LINKS` | Optional extra footer links |
+| `FORMSPREE_QUOTE` / `FORMSPREE_CONTACT` | Empty — forms use mailto |
+| `SITE_URL` | https://remodelingsupplier.us |
 
-Do not invent phone numbers, street addresses, licenses, or social handles. Empty strings and `REPLACE_WITH_*` values stay hidden in the header and footer.
+The official logo is `assets/logo.png` (header and brand mark). `assets/favicon.png` is a square crop for the tab icon.
 
-After you change `BUSINESS_NAME` or NAP fields, also skim the `<title>`, meta tags, and the static JSON-LD block in `index.html` if you want crawlers that do not run JavaScript to see the same text. `js/site.js` refreshes the `#business-jsonld` block from this config at runtime.
+Empty strings and `REPLACE_WITH_*` values stay hidden. Instagram, Facebook, and TikTok show in the header and footer whenever their URLs are non-empty.
+
+After you change NAP fields, skim the `<title>`, meta tags, and the static JSON-LD block in `index.html` if you want non-JS crawlers to see the same text. `js/site.js` refreshes `#business-jsonld` from this config at runtime.
 
 ## Forms
 
@@ -39,91 +42,63 @@ Two forms ship on the home page and again on clean URLs:
 2. **Get information** — `/` `#contact` and `/contact/`  
    Name, phone or email, message
 
-**Default (mailto):** leave the Formspree fields empty and set `EMAIL`. Submit opens the visitor’s email app with the message filled in.
+**Default (mailto):** submit opens the visitor’s email app to `sergeyvirych81@yahoo.com`.
 
-**Formspree:** create a form at [formspree.io](https://formspree.io), then paste the endpoint (example: `https://formspree.io/f/xxxxxxxx`) into `FORMSPREE_QUOTE` and/or `FORMSPREE_CONTACT`. Confirm the same email in Formspree’s dashboard. There is no custom backend in this repo.
+**Formspree (optional):** paste an endpoint into `FORMSPREE_QUOTE` and/or `FORMSPREE_CONTACT`. There is no custom backend in this repo.
 
 A hidden `website` field is a basic honeypot for bots.
 
 ## Local preview
 
 ```bash
-# any static server; examples:
 python3 -m http.server 8080
-npx --yes serve -l 8080
 ```
 
 Open http://localhost:8080
 
 ## Deploy
 
-Publish the **repository root** (this folder). No build step.
+Publish the **repository root**. No build step.
 
 ### Netlify
 
 1. New site from Git, or drag this folder onto Netlify Drop.
-2. Publish directory: `.` (or leave the build command blank).
-3. `netlify.toml` already sets security headers and `/quote` → `/quote/` redirects.
-4. Domain settings → add `remodelingsupplier.us` and `www.remodelingsupplier.us`.
+2. Publish directory: `.`
+3. Add `remodelingsupplier.us` and `www.remodelingsupplier.us`.
 
 ### Vercel
 
-1. Import the Git repo.
-2. Framework preset: Other. Output is the repo root.
-3. `vercel.json` enables clean URLs with trailing slashes.
-4. Project → Domains → add `remodelingsupplier.us`.
+1. Import the Git repo (framework: Other).
+2. Add `remodelingsupplier.us` under Domains.
 
 ### GitHub Pages
 
-1. Repo **Settings → Pages**.
-2. Source: Deploy from a branch (`main`, `/` root).
-3. `CNAME` is already `remodelingsupplier.us`. `.nojekyll` stops Jekyll from ignoring folders.
-4. After the first Pages deploy, GitHub will show the DNS records to use.
+1. Settings → Pages → deploy from a branch (`main`, `/` root).
+2. `CNAME` is already `remodelingsupplier.us`.
 
-### IONOS (or any FTP/S3 static host)
+### IONOS (or any FTP host)
 
-1. Upload every file and folder in this repo except `.git`.
-2. Make sure `index.html` is the directory index.
-3. Point the domain’s document root at that upload folder.
-
-### Render (optional)
-
-Create a **Static Site**. Build command can be empty. Publish directory: `.`
+1. Upload every file except `.git`.
+2. Make `index.html` the directory index.
 
 ## Point remodelingsupplier.us DNS
 
-Use the exact records your host shows in its “custom domain” screen. Typical pattern:
+Use the records your host shows on its custom-domain screen:
 
 | Host | Type | Value |
 | --- | --- | --- |
-| `www` | `CNAME` | the hostname your host gives you (e.g. `something.netlify.app`) |
-| `@` (apex) | `A`, `ALIAS`, or `ANAME` | the apex instructions from that same screen |
+| `www` | `CNAME` | the hostname your host gives you |
+| `@` (apex) | `A`, `ALIAS`, or `ANAME` | from that same screen |
 
-Notes:
-
-- GitHub Pages often wants `A` records to their published IPs **or** an apex `CNAME` if they still allow it — copy what Pages displays, do not guess IPs from an old blog post.
-- After DNS is live, turn on HTTPS in the host dashboard (Let’s Encrypt is automatic on Netlify, Vercel, GitHub Pages, and Render).
-- Keep `CNAME` in this repo matching `remodelingsupplier.us` if you stay on GitHub Pages.
-
-WHOIS/registrar (IONOS or otherwise) only needs those DNS records. You do not need a second copy of the site at the registrar if the host is already serving files.
+Turn on HTTPS after DNS is live.
 
 ## Site map
 
 | URL | Purpose |
 | --- | --- |
 | `/` | Landing page: hero, services, area, how it works, both forms, FAQ |
-| `/quote/` | Quote form (standalone) |
+| `/quote/` | Quote form |
 | `/contact/` | Information / contact form |
 | `/privacy/` | Short privacy note |
-| `/robots.txt` | Allow indexing + sitemap pointer |
+| `/robots.txt` | Allow indexing + sitemap |
 | `/sitemap.xml` | Canonical URLs |
-
-## SEO already included
-
-- Unique title and meta description aimed at appliance repair in Orlando, Kissimmee, and St. Cloud
-- Meta keywords, Open Graph, and Twitter card tags
-- Semantic headings and a LocalBusiness / HomeAndConstructionBusiness JSON-LD graph with placeholder NAP
-- `robots.txt` and `sitemap.xml`
-- Mobile-first HTML/CSS, labeled forms, skip link, visible focus, and contrast-checked colors
-
-When the real phone, email, and address exist, replace the placeholders and request indexing in [Google Search Console](https://search.google.com/search-console) for `https://remodelingsupplier.us/`.

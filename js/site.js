@@ -15,6 +15,16 @@
     return String(value).trim();
   }
 
+  function telHref(value) {
+    var digits = String(value || "").replace(/[^\d]/g, "");
+    if (digits.length === 10) return "tel:+1" + digits;
+    if (digits.length === 11 && digits.charAt(0) === "1") return "tel:+" + digits;
+    if (String(value).trim().indexOf("+") === 0) {
+      return "tel:" + String(value).replace(/[^\d+]/g, "");
+    }
+    return "tel:" + digits;
+  }
+
   function fillBindings() {
     document.querySelectorAll("[data-bind]").forEach(function (el) {
       var key = el.getAttribute("data-bind");
@@ -37,7 +47,11 @@
         return;
       }
       var prefix = el.getAttribute("data-href-prefix") || "";
-      el.setAttribute("href", prefix + String(value).trim());
+      if (prefix === "tel:") {
+        el.setAttribute("href", telHref(value));
+      } else {
+        el.setAttribute("href", prefix + String(value).trim());
+      }
       el.classList.remove("hidden");
       el.removeAttribute("hidden");
     });
@@ -88,7 +102,10 @@
       el.textContent = String(new Date().getFullYear());
     });
 
-    var hasSocial = !isPlaceholder(config.INSTAGRAM_URL) || !isPlaceholder(config.FACEBOOK_URL);
+    var hasSocial =
+      !isPlaceholder(config.INSTAGRAM_URL) ||
+      !isPlaceholder(config.FACEBOOK_URL) ||
+      !isPlaceholder(config.TIKTOK_URL);
     document.querySelectorAll("[data-placeholder-social]").forEach(function (el) {
       if (hasSocial) {
         el.classList.add("hidden");
@@ -104,6 +121,7 @@
     var sameAs = [];
     if (!isPlaceholder(config.INSTAGRAM_URL)) sameAs.push(config.INSTAGRAM_URL);
     if (!isPlaceholder(config.FACEBOOK_URL)) sameAs.push(config.FACEBOOK_URL);
+    if (!isPlaceholder(config.TIKTOK_URL)) sameAs.push(config.TIKTOK_URL);
     (config.OTHER_LINKS || []).forEach(function (item) {
       if (item && !isPlaceholder(item.url)) sameAs.push(item.url);
     });
@@ -112,11 +130,11 @@
       "@context": "https://schema.org",
       "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
       "@id": (config.SITE_URL || "https://remodelingsupplier.us") + "/#business",
-      name: text(config.BUSINESS_NAME, "Remodeling Supplier"),
+      name: text(config.BUSINESS_NAME, "Serhii Appliances Services"),
       url: config.SITE_URL || "https://remodelingsupplier.us",
+      telephone: isPlaceholder(config.PHONE) ? undefined : telHref(config.PHONE).replace("tel:", ""),
       description:
         "Appliance repair and major-appliance installation in Orlando, Kissimmee, St. Cloud, and roughly 100 miles from downtown Orlando, Florida.",
-      telephone: isPlaceholder(config.PHONE) ? undefined : config.PHONE,
       email: isPlaceholder(config.EMAIL) ? undefined : config.EMAIL,
       address: {
         "@type": "PostalAddress",
@@ -211,7 +229,7 @@
   function mailtoBody(kind, data) {
     var lines = [];
     if (kind === "quote") {
-      lines.push("Quote request from the Remodeling Supplier website.");
+      lines.push("Quote request from the Serhii Appliances Services website.");
       lines.push("");
       lines.push("Name: " + data.name);
       lines.push("Phone: " + data.phone);
@@ -222,7 +240,7 @@
       lines.push("Issue:");
       lines.push(data.issue);
     } else {
-      lines.push("Information request from the Remodeling Supplier website.");
+      lines.push("Information request from the Serhii Appliances Services website.");
       lines.push("");
       lines.push("Name: " + data.name);
       lines.push("Phone or email: " + data.reply);
