@@ -398,6 +398,65 @@ h3 {
   color: var(--navy);
 }
 
+.price-note {
+  margin: 1.4rem 0 0;
+  padding: 1.15rem 1.2rem;
+  max-width: 46rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+}
+
+.price-note p {
+  margin: 0 0 0.65rem;
+}
+
+.price-note p:last-child {
+  margin: 0;
+}
+
+.feedback-empty {
+  margin: 0;
+  padding: 1.1rem 1.15rem;
+  max-width: 36rem;
+  background: var(--card);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  color: var(--ink-muted);
+}
+
+.field-optional {
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+.form-fineprint {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+
+.star-fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.star-fieldset legend {
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.star-options {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.star-options label {
+  font-weight: 500;
+}
+
 .hero-visual {
   position: relative;
   border-radius: calc(var(--radius) + 4px);

@@ -241,6 +241,7 @@
     var kind = form.getAttribute("data-form");
     if (kind === "quote") return config.FORMSPREE_QUOTE;
     if (kind === "contact") return config.FORMSPREE_CONTACT;
+    if (kind === "feedback") return config.FORMSPREE_FEEDBACK;
     return "";
   }
 
@@ -257,6 +258,19 @@
       lines.push("");
       lines.push("Issue:");
       lines.push(data.issue);
+    } else if (kind === "feedback") {
+      lines.push("Customer feedback from the Serhii Appliances Services website.");
+      lines.push("Reviewed before anything is posted on the site.");
+      lines.push("");
+      lines.push("Name: " + data.name);
+      lines.push("Email: " + data.email);
+      lines.push("Phone: " + (data.phone || "(not provided)"));
+      lines.push("City: " + data.city);
+      lines.push("Service: " + data.service);
+      lines.push("Rating: " + data.rating + " / 5");
+      lines.push("");
+      lines.push("Feedback:");
+      lines.push(data.message);
     } else {
       lines.push("Information request from the Serhii Appliances Services website.");
       lines.push("");
@@ -278,6 +292,12 @@
       if (!data.location) return "Please enter your city or ZIP.";
       if (!data.appliance) return "Please choose an appliance type.";
       if (!data.issue) return "Please describe the issue.";
+    } else if (kind === "feedback") {
+      if (!data.email) return "Please enter an email address.";
+      if (!data.city) return "Please enter the city or job city.";
+      if (!data.service) return "Please choose a service type.";
+      if (!data.rating) return "Please choose a rating.";
+      if (!data.message) return "Please write your feedback.";
     } else {
       if (!data.reply) return "Please leave a phone number or email.";
       if (!data.message) return "Please enter a message.";
@@ -335,7 +355,9 @@
     var subject =
       kind === "quote"
         ? "Quote request — " + (data.appliance || "appliance") + " — " + data.location
-        : "Information request from " + data.name;
+        : kind === "feedback"
+          ? "Customer feedback — " + data.name + " — " + data.city
+          : "Information request from " + data.name;
     var href =
       "mailto:" +
       encodeURIComponent(config.EMAIL) +

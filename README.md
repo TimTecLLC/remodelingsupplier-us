@@ -36,16 +36,18 @@ After you change NAP fields, skim the `<title>`, meta tags, and the static JSON-
 
 ## Forms
 
-Two forms ship on the home page and again on clean URLs:
+Three forms ship on the site:
 
 1. **Request a quote** — `/` `#quote` and `/quote/`  
-   Name, phone, email, city/ZIP, appliance type, issue
+   Name, phone, email, city/ZIP, appliance type, issue. Phone consultation is free. On-site diagnostic is $60 and is applied toward the repair if the customer books the job.
 2. **Get information** — `/` `#contact` and `/contact/`  
    Name, phone or email, message
+3. **Customer feedback** — `/feedback/`  
+   Name, email, optional phone, city, rating, service type, comments. Reviewed before anything is posted. No login or database.
 
 **Default (mailto):** submit opens the visitor’s email app to `sergeyvirych81@yahoo.com`.
 
-**Formspree (optional):** paste an endpoint into `FORMSPREE_QUOTE` and/or `FORMSPREE_CONTACT`. There is no custom backend in this repo.
+**Formspree (optional):** paste an endpoint into `FORMSPREE_QUOTE`, `FORMSPREE_CONTACT`, and/or `FORMSPREE_FEEDBACK`. There is no custom backend in this repo.
 
 A hidden `website` field is a basic honeypot for bots.
 
@@ -97,9 +99,10 @@ Turn on HTTPS after DNS is live.
 
 | URL | Purpose |
 | --- | --- |
-| `/` | Landing page: hero, services, brands, area, how it works, both forms, FAQ |
+| `/` | Landing page: hero, services, brands, area, how it works, both forms, FAQ, empty feedback slot |
 | `/quote/` | Quote form |
 | `/contact/` | Information / contact form |
+| `/feedback/` | Moderated customer-feedback form |
 | `/privacy/` | Short privacy note |
 | `/locations/<city>/` | Local SEO pages (Orlando, Kissimmee, St. Cloud, and other Central Florida cities) |
 | `/robots.txt` | Allow indexing + sitemap |

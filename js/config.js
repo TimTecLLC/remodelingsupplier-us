@@ -29,6 +29,7 @@ window.SITE_CONFIG = {
    */
   FORMSPREE_QUOTE: "",
   FORMSPREE_CONTACT: "",
+  FORMSPREE_FEEDBACK: "",
 
   SITE_URL: "https://remodelingsupplier.us",
 };
